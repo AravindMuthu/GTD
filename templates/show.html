@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/style2.css">
+</head>
+
+<body>
+<a href=/todo/><b><h2>Home</h2></b></a>
+<fieldset>
+<legend>To-DO List</legend>
+
+<table>
+<tr>    <th><th>
+ 	<th>subject</th>
+	<th>Date</th>
+	<th>Priority</th>
+</tr>
+{% for entry in entrys %}
+
+<tr>
+<td><input type="checkbox" name="check"><td>
+<td>{{entry.subject}}</td>
+<td>{{entry.date}}</td>
+<td>{{entry.priority}}</td>
+ {% endfor %}
+
+</tr>
+
+</table>
+
+</fieldset>
+<form method='get' action='/delete/'>
+
+<input type="submit" class="button"  value="Delete All">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head><title>ToDo list</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/ui-lightness/jquery-ui-1.7.2.custom.css">
+    <script type="text/javascript" src="/static/js/jquery-1.3.2.js"> </script>
+    <script type="text/javascript" src="/static/js/functionqry.js"> </script>
+    <script type="text/javascript" src="/static/js/jquery-ui-1.7.2.custom.min.js" ></script>
+   
+    
+
+
+
+</head>
+<body>
+<h1>TO-DO list</h1><hr><br>
+
+{% if error %}
+       {% for errors in error %}
+      <p style="color:red;">{{errors}}
+       {% endfor %}
+{% endif %}
+
+
+
+<form  action="/entrytodb/" method="POST" >
+
+<h2> Subject : <input type="text" name="subject" ><br><br>
+<h2>Due Date: <input type="text" name="date" id="id_date" size="10"/><br><br>
+<h2>Priority: <select id="id_priority" name="priority">
+                          <option value="" selected="selected">---------</option>
+
+		<option value="H">High</option>
+		<option value="M">Medium</option>
+		<option value="L">Low</option>
+	</select><br><br>
+
+<input type ="submit" value=" ADD ">
+<input type ="reset" value="RESET">
+
+</form>
+<hr>
+
+
+<form action="/getfromdb/" method="get">
+<input type="submit" value="show">
+</form>
+
+</html>

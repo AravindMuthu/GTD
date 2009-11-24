@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<link rel="stylesheet" href="/static/css/style2.css">
+<body>
+<a href=/todo/><b>Home</b></a>
+
+
+<table border="2">
+<tr>    <th><th>
+ 	<th>subject</th>
+	<th>Date</th>
+	<th>Priority</th>
+</tr>
+{% for entry in entrys %}
+
+<tr>
+<td><input type="checkbox" name="check"><td>
+<td>{{entry.subject}}</td>
+<td>{{entry.date}}</td>
+<td>{{entry.priority}}</td>
+ {% endfor %}
+
+</tr>
+
+</table>
+
+
+<form method='get' action='/delete/'>
+<input type="submit" value="Delete">
+</body>
+</html>

@@ -1,0 +1,25 @@
+input.button {
+font-family: Arial, Verdana, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: bold;
+background-color: #dde3ef;
+border-top-color:#ffcc00;
+border-left-color:#ffcc00;
+border-right-color:#039;
+border-bottom-color:#039;
+border:2px solid;
+text-indent: 2px;
+}
+body {background-color:rgb(70,70,70);
+     }
+table,td,th{
+       
+       border-collapse:collapse;
+       border-color:;
+       border:1px solid;
+      }
+h2{color:red;}
+
+fieldset{
+	 border:1px solid;
+	}

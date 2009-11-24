@@ -1,0 +1,13 @@
+h1 {font-size:30px;font-family=:arial;}
+h2 {font-size:15px;font-family=courier;}
+body {  
+            
+            background-color:rgb(60,60,60);
+           
+            background-repeat:repeat;
+            background-attachment:fixed;
+            background-image:url("miki.gif");
+           
+
+    }
+p { text-indent:10px;}
