@@ -1,6 +1,6 @@
 # Django settings for DjangoTodo project.
 
-DEBUG = True
+DEBUG =True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -10,7 +10,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'C:/WorkBase/Python/DjangoTodo/Todo/list.db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = '/home/anand/Projects/code/django/GTD/Todo/list.db'             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -35,7 +35,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = 'C:/WorkBase/Python/DjangoTodo/static/'
+MEDIA_ROOT = '/home/anand/Projects/code/django/GTD/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -54,7 +54,7 @@ SECRET_KEY = '-%arr*9+ruf91jnw@&sp1kk&z82el$#=d%21v4siu-69b2t*1f'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    #'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,19 +63,20 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'DjangoTodo.urls'
+ROOT_URLCONF = 'GTD.urls'
 
 TEMPLATE_DIRS = (
-    'C:/WorkBase/Python/DjangoTodo/templates'
+    '/home/anand/Projects/code/django/GTD/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'DjangoTodo.Todo'
+    'GTD.Todo'
 )
