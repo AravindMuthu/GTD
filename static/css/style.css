@@ -1,13 +1,29 @@
-h1 {font-size:30px;font-family=:arial;}
-h2 {font-size:15px;font-family=courier;}
+h1 {font-size:30px;font-family:arial;}
+h2 {font-size:15px;font-family:courier;}
 body {  
             
-            background-color:rgb(60,60,60);
+            background-color:;
            
             background-repeat:repeat;
             background-attachment:fixed;
-            background-image:url("miki.gif");
+            background-image:url();
            
 
     }
 p { text-indent:10px;}
+
+#topright{float:right;
+		background-color:;}
+
+#user{float:left;
+	background-color:;}
+
+#top{background-color:F0F8FF}
+
+#header {background-color:#87CEEB;
+	}
+
+div.todo{background-color:F0F8FF;
+	 border:1px solid grey;
+	 width:400;
+	 }

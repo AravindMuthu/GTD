@@ -10,16 +10,22 @@ border-bottom-color:#039;
 border:2px solid;
 text-indent: 2px;
 }
-body {background-color:rgb(70,70,70);
+body {background-color:);
      }
 table,td,th{
        
        border-collapse:collapse;
        border-color:;
-       border:1px solid;
+       border:;
       }
 h2{color:red;}
 
 fieldset{
 	 border:1px solid;
+	 background-color:F0F8FF;
 	}
+#topleft{float:left;}
+#topright{float:right;}
+#top{background-color:F0F8FF;}
+
+#deleteall{align:bottom;}
