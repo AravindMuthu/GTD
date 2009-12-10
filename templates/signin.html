@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/signin.css">
+</head>
+<body>
+<div id="header">
+<h1>User Registeration</h1>
+</div>
+<fieldset class="userregister">
+<legend>Enter Your Details</legend>
+  {% if info %}
+        <p style="color:green">{{info}}
+  {% endif %}
+  {% if error %}
+       
+         <p style="color:red">    {{error}}
+       
+ {% endif %}
+  <form method="POST" action="/create_user/">
+   
+   Username :<input type="text" name="username"><br>
+
+   Password   : <input type="password" name="password"><br>
+
+   <input type="submit" value="create">
+
+  </form>
+</fieldset>
+<a href=/GTD/>Home Page</a>
+</body>
+</html>

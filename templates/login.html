@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body bgcolor="#F4F4EC">
+
+<div align="center">
+<div class="login">
+<h4>GTD</h4>
+{% if error %}
+  
+<p style="color:red"> {{ error }}
+
+{% endif %}
+
+  <form  method="POST" action="/login/">
+  <table>
+  <tr>
+  <td align="right" valign="middle"> Username:<td align="left"><input type="text" name="username">
+  </tr>
+  <tr>
+  <td align="right" valign="middle"> Password :<td align="left"><input type="password" name="password">
+  </tr><table>
+  
+  <input type="submit" value="login">
+   <input type="reset" value="clear"><br>
+   <a href="/signup/">create an account</a>
+ 
+  </form>
+</div>
+</div>
+</body>
+</html>

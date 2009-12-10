@@ -25,40 +25,36 @@
 <div align="center">
 <div class="todo">
 
-{% if noerror %}
-      <p style="color:green">{{noerror}}
+{% if info %}
+      <p style="color:green">{{info}}
 {% endif %}
 {% if error %}
        {% for errors in error %}
       <p style="color:red;">{{errors}}
        {% endfor %}
 {% endif %}
-
-
-<form  action="/entrytodb/" method="POST" >
-<table><tr><td></tr>
-<tr><td>Subject </td><td> <input type="text" name="subject" ></td></tr>
-<tr><td>Due Date</td><td> <input type="text" name="date" id="id_date" size="10"/></td></tr>
+{% if entrys  %}
+      {% for entry in entrys %}
+	 
+<form  action="/update/{{entry.item_id}}/" method="POST" >
+<table>
+<tr><td><td></tr>
+<tr><td>Subject </td><td> <input type="text" name="subject" value={{entry.subject}}></td></tr>
+<tr><td>Due Date</td><td> <input type="text" name="date" id="id_date" size="10" value={{entry.date}}></td></tr>
 <tr><td>Priority</td><td> <select id="id_priority" name="priority">
-                <option selected>-------</option>
-		<option value="H">High</option>
-		<option value="M">Medium</option>
-		<option value="L">Low</option>
+                <!-- <option selected>{{entry.get_priority_display}}</option> --> 
+		<option value="H" {% ifequal entry.priority "H" %} "selected" {% endifequal %}>High</option>
+		<option value="M" {% ifequal entry.priority "M" %} "selected" {% endifequal %} >Medium</option>
+		<option value="L" {% ifequal entry.priority "L" %} "selected" {% endifequal %}>Low</option>
 	      </select></td></tr>
+        
+       {% endfor %}
+{% endif %}
 
-<tr><td><input type="submit" value=" ADD "><input type="reset" value="RESET"></td></tr>
+<tr><td><input type="submit" value="update"></td></tr>
 </table>
 </form>
 </div>
 </div>
-
-
-<!--
-<div id="cloud1260242559" style="margin: 1em 0 1.5em 0;">
-Loading Django Cloud ...
-</div>
-<script type="text/javascript" src='http://cloud.clusty.com/search?v%3aproject=clusty-cloud&query=Django&id=cloud1260242559&color=1E90FF&border-color=123C92&linkstyle=color&borderstyle=simple&'></script>
-<hr>-->
-
 </body>
 </html>

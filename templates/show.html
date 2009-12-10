@@ -4,34 +4,40 @@
 </head>
 
 <body>
-<a href=/todo/><b><h2>Home</h2></b></a>
+<div id="top">
+<div id="topleft">
+<a href=/todo/>Back</a>
+</div>
+<div id="topright">
+   
+    <a href="/logout/"> logout </a>
+</div><br>
+
+</div>
 <fieldset>
-<legend>To-DO List</legend>
-
-<table>
-<tr>    <th><th>
+<legend>To-Do List</legend>
+<table> 
+<tr><td>{% if info %}<p style="color:green">{{info}}{% endif %} </td></tr>
+<tr>    
  	<th>subject</th>
-	<th>Date</th>
-	<th>Priority</th>
-</tr>
+</tr>   
 {% for entry in entrys %}
-
 <tr>
-<td><input type="checkbox" name="check"><td>
-<td>{{entry.subject}}</td>
-<td>{{entry.date}}</td>
-<td>{{entry.priority}}</td>
- {% endfor %}
+            
+<td><a href=/show/{{entry.item_id}}/>{{entry.subject}}</a></td><td><a href=/delete_item/{{entry.item_id}}/><img height="15px" width="15px"  src="/static/images/delete.jpg" alt='delete'></a>{% if msg %} <p style="color:red">{{msg}}</p> {% endif %}</td>
+{% endfor %}
 
 </tr>
 
 </table>
 
 </fieldset>
+<div id="deleteall">
 <form method='get' action='/delete/'>
 
 <input type="submit" class="button"  value="Delete All">
 
 </form>
+</div>
 </body>
 </html>
