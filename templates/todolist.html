@@ -18,11 +18,13 @@
 </div>
  
 <div id="header">
-    <h1 onmouseover="style.color='blue'" onmouseout="style.color='white'">TO-DO list</h1>
+    <h1 onmouseover="style.color='blue'" onmouseout="style.color='white'">TO-DO Entry</h1>
 </div>
 <div id="topright">
  <a href="/getfromdb/">list </a></div>
+
 <div align="center">
+
 <div class="todo">
 
 {% if noerror %}
@@ -38,9 +40,9 @@
 <form  action="/entrytodb/" method="POST" >
 <table><tr><td></tr>
 <tr><td>Subject </td><td> <input type="text" name="subject" ></td></tr>
-<tr><td>Due Date</td><td> <input type="text" name="date" id="id_date" size="10"/></td></tr>
+<tr><td>Due Date</td><td title="yyyy/mm/dd"> <input type="text" name="date" id="id_date" size="10"/></td></tr>
 <tr><td>Priority</td><td> <select id="id_priority" name="priority">
-                <option selected>-------</option>
+               
 		<option value="H">High</option>
 		<option value="M">Medium</option>
 		<option value="L">Low</option>
@@ -53,12 +55,7 @@
 </div>
 
 
-<!--
-<div id="cloud1260242559" style="margin: 1em 0 1.5em 0;">
-Loading Django Cloud ...
-</div>
-<script type="text/javascript" src='http://cloud.clusty.com/search?v%3aproject=clusty-cloud&query=Django&id=cloud1260242559&color=1E90FF&border-color=123C92&linkstyle=color&borderstyle=simple&'></script>
-<hr>-->
+
 
 </body>
 </html>

@@ -1,43 +1,72 @@
 <html>
 <head>
 <link rel="stylesheet" href="/static/css/style2.css">
+<link rel="stylesheet" type="text/css" href="/static/css/ui-lightness/jquery-ui-1.7.2.custom.css">
+
+    <script type="text/javascript" src="/static/js/jquery-1.3.2.js"> </script>
+    <script type="text/javascript" src="/static/js/functionqry.js"> </script>
+    <script type="text/javascript" src="/static/js/jquery-ui-1.7.2.custom.min.js" ></script
 </head>
 
 <body>
+
 <div id="top">
+
 <div id="topleft">
 <a href=/todo/>Back</a>
 </div>
 <div id="topright">
    
-    <a href="/logout/"> logout </a>
+    <a href="/logout/"> logout </a> 
 </div><br>
 
 </div>
+
+<div id="header">
+    <h1 onmouseover="style.color='blue'" onmouseout="style.color='white'">TO-DO list</h1>
+</div>
+
+<div align="center">
+
+<div id="item_list">
+
 <fieldset>
-<legend>To-Do List</legend>
-<table> 
-<tr><td>{% if info %}<p style="color:green">{{info}}{% endif %} </td></tr>
+<table>
+<!--<tr><td>{% if info %}<p style="color:green">{{info}}{% endif %}</td></tr> -->
 <tr>    
- 	<th>subject</th>
+ 	<th align="left">Pending Item</th>
+	<!--<th>date</th>
+	<th>priority</th>-->
+	<th align="left"></th>
 </tr>   
 {% for entry in entrys %}
 <tr>
-            
-<td><a href=/show/{{entry.item_id}}/>{{entry.subject}}</a></td><td><a href=/delete_item/{{entry.item_id}}/><img height="15px" width="15px"  src="/static/images/delete.jpg" alt='delete'></a>{% if msg %} <p style="color:red">{{msg}}</p> {% endif %}</td>
-{% endfor %}
-
+{% if info %}
+{{info}}
+{% endif %}
+<td title="To update click"><a href="/show/{{entry.item_id}}/"><fontcolor="black">{{entry.subject}}</font></a></td>
+<!--<td>{{entry.date}}</td>
+<td>{{entry.priority}}</td>-->
+<td title="Delete this item"><a href="/delete_item/{{entry.item_id}}/"><img style="border:0px" height="15px" width="15px" src="/static/images/delete.jpg" ></a></td>
 </tr>
 
-</table>
 
+{% endfor %}
+
+</table>
 </fieldset>
-<div id="deleteall">
+</div>
+</div>
+
 <form method='get' action='/delete/'>
 
-<input type="submit" class="button"  value="Delete All">
-
+<input type="submit" class="button"  value="Delete all items" title="Delete all items">
 </form>
+
 </div>
+ 
+
+
+
 </body>
 </html>

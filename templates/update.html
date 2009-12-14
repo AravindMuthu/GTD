@@ -18,7 +18,7 @@
 </div>
  
 <div id="header">
-    <h1 onmouseover="style.color='blue'" onmouseout="style.color='white'">TO-DO list</h1>
+    <h1 onmouseover="style.color='blue'" onmouseout="style.color='white'">Update TO-DO list</h1>
 </div>
 <div id="topright">
  <a href="/getfromdb/">list </a></div>
@@ -29,18 +29,18 @@
       <p style="color:green">{{info}}
 {% endif %}
 {% if error %}
-       {% for errors in error %}
+       {% for errors in error %} 
       <p style="color:red;">{{errors}}
        {% endfor %}
 {% endif %}
 {% if entrys  %}
-      {% for entry in entrys %}
+      {% for entry in entrys %} 
 	 
 <form  action="/update/{{entry.item_id}}/" method="POST" >
 <table>
 <tr><td><td></tr>
-<tr><td>Subject </td><td> <input type="text" name="subject" value={{entry.subject}}></td></tr>
-<tr><td>Due Date</td><td> <input type="text" name="date" id="id_date" size="10" value={{entry.date}}></td></tr>
+<tr><td>Subject </td><td> <input type="text" name="subject" value="{{entry.subject}}"></td></tr>
+<tr><td>Due Date</td><td> <input type="text" name="date" id="id_date" size="10" value="{{entry.date}}"></td></tr>
 <tr><td>Priority</td><td> <select id="id_priority" name="priority">
                 <!-- <option selected>{{entry.get_priority_display}}</option> --> 
 		<option value="H" {% ifequal entry.priority "H" %} "selected" {% endifequal %}>High</option>

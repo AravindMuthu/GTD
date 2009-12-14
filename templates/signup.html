@@ -8,8 +8,15 @@
 </div>
 <fieldset class="userregister">
 <legend>Enter Your Details</legend>
+  {% if erro %}
+  {% for errors in erro %}
+    {{errors}}
+   {% endfor %} 
+  {% endif %}
+
+
   {% if info %}
-        <p style="color:green">{{info}}
+        <p style="color:green">{{info}}  
   {% endif %}
   {% if error %}
        

@@ -1,12 +1,22 @@
 <html>
 <head>
-<link rel="stylesheet" href="/static/css/login.css">
+<link rel="stylesheet" href="/static/css/login.css"> 
 </head>
-<body bgcolor="#F4F4EC">
+<body>
+<div id="top">
 
+<div id="todoimage">
+<img src="/static/images/todo.jpg" >
+</div>
+
+<div id="topright">
 <div align="center">
 <div class="login">
-<h4>GTD</h4>
+
+<h4>Sign in to GTD</h4>
+
+
+
 {% if error %}
   
 <p style="color:red"> {{ error }}
@@ -16,18 +26,23 @@
   <form  method="POST" action="/login/">
   <table>
   <tr>
-  <td align="right" valign="middle"> Username:<td align="left"><input type="text" name="username">
+  <td align="right" valign="middle"> UserId:<td align="left"><input type="text" name="username">
   </tr>
   <tr>
   <td align="right" valign="middle"> Password :<td align="left"><input type="password" name="password">
   </tr><table>
   
   <input type="submit" value="login">
-   <input type="reset" value="clear"><br>
-   <a href="/signup/">create an account</a>
- 
+  <input type="reset" value="clear">
+ <h4>Don't have a GTD ID ?</h4>
+  <a href="/signup/">Sign Up!</a>   
+  
   </form>
+
 </div>
+</div>
+</div>
+
 </div>
 </body>
 </html>
