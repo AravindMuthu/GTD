@@ -67,7 +67,7 @@ def create_user(request):
                 username=request.POST['username']
                 if User.objects.filter(user=username):
                     
-                    errors.append("Change username")
+                    errors.append("Username already exits ")
                     return render_to_response("signup.html",{"erro":errors})
                 else:
                     
