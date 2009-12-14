@@ -28,7 +28,7 @@ def entry_todo(request):
                 post=Todo(user_id=request.session['user_id'],subject=request.POST['subject'],date=request.POST['date'],priority=request.POST['priority']) #post values into DB
                 post.save()   #commit save
             except:
-                raise
+               
                 return render_to_response("todolist.html",{"error":''})
     return render_to_response("todolist.html",{"noerror":'Successfully saved',"user":request.session['user_id']})
 
@@ -75,7 +75,7 @@ def create_user(request):
                     post.save()
                     
             except:
-                raise
+             
                 return render_to_response('signup.html',{'error':" User ID already exist!"})
 
     return render_to_response('signup.html',{"info":"Successfully created"})
