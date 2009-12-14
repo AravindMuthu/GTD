@@ -8,24 +8,40 @@ border-left-color:#ffcc00;
 border-right-color:#039;
 border-bottom-color:#039;
 border:2px solid;
-text-indent: 2px;
+text-indent:2px;
 }
-body {background-color:);
+body {background-color:white);
      }
-table,td,th{
+table{
+      width:450;
+      border-style:;
+      border-width:;  
+      font-color:black;  
        
-       border-collapse:collapse;
-       border-color:;
-       border:;
       }
+td{}
+a{ color:green;
+   text-decoration: none;
+	}
+
 h2{color:red;}
 
 fieldset{
-	 border:1px solid;
+	 width:600;
+	 margin:0 auto;
+	 border:0px;
 	 background-color:F0F8FF;
 	}
 #topleft{float:left;}
 #topright{float:right;}
 #top{background-color:F0F8FF;}
+#header{background-color:#87CEEB;}
 
-#deleteall{align:bottom;}
+
+#item_list{
+	   height:600;
+           width:620;
+	   padding:px;
+	   margin:0 auto;
+	   background-color:F0F8FF;
+	  }
