@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from Todo.views import entry_todo,show_todo,todoform,entry_delete,login,create_user,signup,logout,show,update,delete_item
+from Todo.views import entry_todo,show_todo,todoform,entry_delete,login,create_user,signup,logout,show,update,delete_item,debuginfo
 
 from django.conf import settings
 # Uncomment the next two lines to enable the admin:
@@ -7,6 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+                       ('^$',login),
                        ('^GTD/$',login),
                        ('^login/$',login),
                        ('^signup/$',signup),
