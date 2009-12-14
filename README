@@ -5,6 +5,16 @@ GTD
 
 This is simple web application using Django.
 
+It's easy to make to-do list .
+
+
+How to run
+===========
+1.Clone it
+2.Configure settings.py
+3.Run python manage.py syncdb where you have clone it.
+4.Run Python manage.py runserver
+5.Make your browser url as http://127.0.0.1:8000/ 
            
 Thanks,   
 Aravind Muthu
