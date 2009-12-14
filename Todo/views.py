@@ -42,9 +42,10 @@ def show_todo(request):
     #name=request.GET['user']
     name=request.session['user_id']
     entry=Todo.objects.filter(user_id=name)    #Fetch data from DB using user_id
-    return render_to_response("show.html",{'entrys':entry})
+    return render_to_response("show.html",{'entrys':entry ,"user":name})
     
 def entry_delete(request):
+    """ Delete all the item from db by session user_id """
     name=request.session['user_id']
     entry=Todo.objects.filter(user_id=name).delete()#To delete
     return render_to_response('show.html',{"entrys":entry})
@@ -53,6 +54,8 @@ def entry_delete(request):
 
 
 def create_user(request):
+
+    """ To create an GTD user account """
     errors=[]
     if request.method=="POST":
         if(not request.POST['username'])or (not request.POST['password']):
@@ -63,17 +66,22 @@ def create_user(request):
             try:
                 username=request.POST['username']
                 if User.objects.filter(user=username):
+                    
                     errors.append("Change username")
-                    return render_to_reponse("signup.html",{"error":errors})
+                    return render_to_response("signup.html",{"erro":errors})
                 else:
+                    
                     post=User(user=request.POST['username'],password=request.POST['password'])
                     post.save()
+                    
             except:
-                return render_to_response('signup.html',{'error':" already exist"})
+                raise
+                return render_to_response('signup.html',{'error':" User ID already exist!"})
 
     return render_to_response('signup.html',{"info":"Successfully created"})
 
 def login(request):
+    """ It gives access to the existing user to access GTD  """
     if request.method=="POST":
        if (request.POST['username'] and request.POST['password']) :
           try:
@@ -90,9 +98,11 @@ def login(request):
         return render_to_response("login.html")#,{"error":"Provide username or password!"})
 
 def signup(requset):
+    """ Which gives the registration form """
     return render_to_response("signup.html")
 
 def logout(request):
+    """ exit from GTD"""
     request.session.clear()
     return HttpResponseRedirect('/GTD/')
 
@@ -108,6 +118,7 @@ def show(request,id):
         return HttpResponse('No page Found')
 
 def update(request,id):
+    """ To update the Pending item """
     
     errors=[]
     if request.method=='POST':
@@ -121,9 +132,9 @@ def update(request,id):
                 post=Todo.objects.filter(item_id=id).update(user_id=request.session['user_id'],subject=request.POST['subject'],date=request.POST['date'],priority=request.POST['priority']) #append the values into DB
                 
             except:
-                raise
-                errors.append("some error")
-                return render_to_response("update.html",{"error":errors,'entrys':entry})
+                entry=Todo.objects.filter(item_id=id)
+                errors.append("Enter proper date")
+                return render_to_response("update.html",{"error":errors,"entrys":entry})
             
             name=request.session['user_id']
             entry=Todo.objects.filter(item_id=id)
@@ -137,10 +148,12 @@ def update(request,id):
 
 
 def debuginfo(request):
-    return HttpResponse('sorry page not found')
+    request.session.clear()
+    return render_to_response('404.html')
 
 
 def delete_item(request,id):
+    """ It does delete the item which is selected by user """
     name=request.session['user_id']
     delet=Todo.objects.filter(user_id=name,item_id=id).delete()
     return HttpResponseRedirect('/getfromdb/')
