@@ -50,9 +50,9 @@
 ----------------------------------*/
 .ui-widget { font-family: Verdana, Arial, sans-serif; font-size: 1.1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana, Arial, sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #555555; background: #000000 url(images/ui-bg_loop_25_000000_21x21.png) 50% 50% repeat; color: #ffffff; }
-.ui-widget-content a { color: #ffffff; }
-.ui-widget-header { border: 1px solid #333333; background: #444444 url(images/ui-bg_highlight-soft_44_444444_1x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+.ui-widget-content { border: 1px solid #555555; background: #000000 url(images/back.png) 50% 50% repeat; color:black; }
+.ui-widget-content a { color: green; }
+.ui-widget-header { border: 1px solid #333333; background: #444444 url(images/back.png) 50% 50% repeat; color:; font-weight: bold; }/* calender head and tabs head */
 .ui-widget-header a { color: #ffffff; }
 
 /* Interaction states
@@ -309,7 +309,7 @@
 .ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
 .ui-datepicker td { border: 0; padding: 1px; }
 .ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
-.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image:; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
 .ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
 
